@@ -1,0 +1,86 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="description" content="Pizza Nizar : pizzas 100 % halal, sans porc, sans alcool. Ta faim, Pizza Nizar. La pizza parfaite."><meta name="theme-color" content="#12261c"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="icon-192.png"><title>Pizza Nizar – Pizzas 100 % halal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#12261c;--bg2:#1a3427;--fg:#f7f0df;--mut:#b9c7b8;--red:#e8402f;--gold:#f4b942;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12261c}}
+:root[data-theme="dark"]{--bg:#12261c}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 17px/1.5 "DM Sans",system-ui,sans-serif}
+h1,h2,.logo{font-family:"Bowlby One",Impact,sans-serif;font-weight:400;line-height:1.02;margin:0}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:#12261cee;backdrop-filter:blur(8px)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-size:22px;color:var(--gold)}
+.btn{display:inline-block;background:var(--red);color:#fff;text-decoration:none;font-weight:700;border:0;border-radius:999px;padding:12px 24px;font-size:17px;font-family:inherit;cursor:pointer}
+.btn:focus-visible,a:focus-visible,button:focus-visible,svg g:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.btn{font-family:"Bowlby One",Impact,sans-serif;font-weight:400;letter-spacing:.5px}
+.btn.big{font-size:21px;padding:16px 34px}
+.hero{padding:56px 0 48px}
+.hero h1{font-size:clamp(52px,15vw,104px);color:var(--fg)}
+.hero h1 span{color:var(--red);display:block}
+.hero p{max-width:30em;color:var(--mut);font-size:19px;margin:22px 0 28px}
+.hero p.slogan{font-family:"Bowlby One",Impact,sans-serif;font-size:clamp(22px,6vw,32px);line-height:1.15;color:var(--gold);margin:18px 0 0}
+.badge{display:inline-block;border:2px solid var(--gold);color:var(--gold);border-radius:8px;padding:4px 12px;font-weight:700;margin-bottom:20px}
+h2{font-size:34px;margin-bottom:22px}
+.menu{padding:30px 0 56px}
+.item{display:flex;justify-content:space-between;gap:16px;padding:20px 0;border-top:1px solid #f7f0df26}
+.item h3{margin:0 0 4px;font-size:21px}
+.item p{margin:0;color:var(--mut)}
+.item.sig{background:var(--bg2);border:2px solid var(--gold);border-radius:16px;padding:20px;margin-top:12px}
+.tag{font-size:13px;font-weight:700;color:var(--bg);background:var(--gold);border-radius:6px;padding:2px 8px;white-space:nowrap;align-self:flex-start}
+.slice{background:var(--bg2);padding:56px 0 40px;text-align:center}
+.slice p{color:var(--mut);margin:0 auto 12px;max-width:28em}
+svg{width:min(86vw,380px);height:auto;overflow:visible;margin:10px auto 0;display:block}
+svg g{cursor:pointer;transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+svg text{font:700 13px "DM Sans",sans-serif;fill:#fff;pointer-events:none}
+#cap{min-height:92px;margin-top:26px}
+#cap h3{font-family:"Bowlby One",Impact,sans-serif;font-weight:400;font-size:24px;margin:0 0 6px;color:var(--gold)}
+footer{padding:44px 0 40px;text-align:center}
+footer p{color:var(--mut)}
+#own{background:none;border:0;color:var(--mut);text-decoration:underline;font:inherit;font-size:14px;cursor:pointer;margin-top:24px}
+#pan{display:none;margin:14px auto 0;max-width:300px;background:var(--bg2);border-radius:12px;padding:16px}
+#pan input{font:inherit;padding:8px;border-radius:8px;border:1px solid #fff4;background:var(--bg);color:var(--fg);width:120px}
+#pan b{font-size:40px;color:var(--gold);display:block}
+@media (prefers-reduced-motion:reduce){svg g{transition:none}html{scroll-behavior:auto}}
+</style></head><body>
+<header><div class="wrap"><span class="logo">Pizza Nizar</span><a class="btn call" href="#">Commander</a></div></header>
+<main>
+<section class="wrap hero"><div class="badge">100 % halal · sans porc · sans alcool</div>
+<h1>Pizza<span>Nizar</span></h1>
+<p class="slogan">Ta faim, Pizza Nizar.<br>La pizza parfaite.</p>
+<p>Des pizzas généreuses, préparées avec des ingrédients halal. Un appel et c'est parti.</p>
+<a class="btn big call" href="#">Appeler pour commander</a></section>
+<section class="wrap menu"><h2>Nos pizzas</h2><div id="list"></div></section>
+<section class="slice"><div class="wrap"><h2>Un style pour chaque part</h2><p>Touche une part pour découvrir le style.</p>
+<svg id="pz" viewBox="-20 -20 340 340" role="img" aria-label="Pizza découpée en six parts"></svg>
+<div id="cap" aria-live="polite"></div></div></section>
+</main>
+<footer><div class="wrap"><h2>Ta faim ?</h2><p>Pizza Nizar, la pizza parfaite. Halal, sans porc, sans alcool.</p><a class="btn big call" href="#">Commander</a><br>
+<button id="own">Espace patron</button>
+<div id="pan"><label>Code <input id="pin" type="password" inputmode="numeric" autocomplete="off"></label><div id="cnt"></div></div></div></footer>
+<script>
+const PHONE="",PIN="1234";
+const pizzas=[
+["Margherita","Sauce tomate, mozzarella, basilic frais."],
+["Reine","Sauce tomate, mozzarella, poulet, champignons."],
+["4 Fromages","Mozzarella, chèvre, emmental, parmesan."],
+["Végétarienne","Poivrons, oignons, champignons, olives, tomates cerises."],
+["Pizza Nizar","Six fromages : emmental, cheddar, mozzarella, chèvre, camembert, parmesan.","La signature"]];
+document.getElementById("list").innerHTML=pizzas.map(p=>`<div class="item${p[2]?" sig":""}"><div><h3>${p[0]}</h3><p>${p[1]}</p></div>${p[2]?`<span class="tag">${p[2]}</span>`:""}</div>`).join("");
+document.querySelectorAll(".call").forEach(a=>{if(PHONE){a.href="tel:"+PHONE;a.target="_top"}else a.href="#";a.addEventListener("click",()=>{try{localStorage.setItem("pn",(+localStorage.getItem("pn")||0)+1)}catch(e){}})});
+// Pizza découpée
+const parts=[["Classique","#c0392b","La Margherita : tomate, mozzarella, basilic. Simple et efficace."],["Poulet","#d35400","La Reine au poulet halal, avec champignons et mozzarella."],["Fromages","#e0a526","La 4 Fromages : mozzarella, chèvre, emmental, parmesan."],["Végé","#3f8f4f","La Végétarienne : poivrons, oignons, champignons, olives, tomates cerises."],["Nizar","#a93226","Notre signature : six fromages fondants dans une seule pizza."],["Halal","#1e6b52","Toutes nos pizzas sont halal : sans porc et sans alcool."]];
+const pz=document.getElementById("pz"),cap=document.getElementById("cap"),R=140,pt=(a,r)=>[150+r*Math.sin(a),150-r*Math.cos(a)];
+parts.forEach((p,i)=>{const a0=i*Math.PI/3+.02,a1=(i+1)*Math.PI/3-.02,m=(a0+a1)/2,[x0,y0]=pt(a0,R),[x1,y1]=pt(a1,R),[lx,ly]=pt(m,88),[cx,cy]=pt(m,R-6);
+const g=document.createElementNS("http://www.w3.org/2000/svg","g");g.setAttribute("tabindex","0");g.setAttribute("role","button");g.setAttribute("aria-label",p[0]);g.dataset.dx=Math.sin(m);g.dataset.dy=-Math.cos(m);
+g.innerHTML=`<path d="M150 150L${x0} ${y0}A${R} ${R} 0 0 1 ${x1} ${y1}Z" fill="${p[1]}"/><path d="M${x0} ${y0}A${R} ${R} 0 0 1 ${x1} ${y1}" fill="none" stroke="#f4b942" stroke-width="12" stroke-linecap="round"/><circle cx="${lx+14*Math.sin(m+.5)}" cy="${ly-14*Math.cos(m+.5)}" r="5" fill="#ffffff55"/><circle cx="${lx-16*Math.sin(m-.6)}" cy="${ly+16*Math.cos(m-.6)}" r="4" fill="#ffffff44"/><text x="${lx}" y="${ly}" text-anchor="middle">${p[0]}</text>`;
+const sel=()=>{[...pz.children].forEach(c=>c.dataset.on=0);g.dataset.on=1;shift();cap.innerHTML=`<h3>${p[0]}</h3><p>${p[2]}</p>`};
+g.onclick=sel;g.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();sel()}};pz.appendChild(g)});
+let apart=false;function shift(){[...pz.children].forEach(g=>{const d=(apart?10:0)+(g.dataset.on==1?12:0);g.style.transform=`translate(${g.dataset.dx*d}px,${g.dataset.dy*d}px)`})}
+new IntersectionObserver((e,o)=>{if(e[0].isIntersecting){apart=true;shift();cap.innerHTML=`<h3>${parts[5][0]}</h3><p>${parts[5][2]}</p>`;o.disconnect()}},{threshold:.5}).observe(pz);
+// Espace patron
+const pan=document.getElementById("pan"),pin=document.getElementById("pin"),cnt=document.getElementById("cnt");
+document.getElementById("own").onclick=()=>{pan.style.display=pan.style.display==="block"?"none":"block"};
+pin.oninput=()=>{if(pin.value===PIN){let n=0;try{n=+localStorage.getItem("pn")||0}catch(e){}cnt.innerHTML=`<b>${n}</b>appui${n>1?"s":""} sur « Commander »`}else cnt.textContent=""};
+if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js").catch(()=>{});
+</script></body></html>
